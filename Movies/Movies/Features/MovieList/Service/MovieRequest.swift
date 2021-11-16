@@ -1,5 +1,5 @@
 //
-//  DashboardRequest.swift
+//  MovieRequest.swift
 //  Clean Architecture
 //
 //  Created by Wladmir Silva on 11/11/21.
@@ -8,12 +8,12 @@
 import Foundation
 import Networking
 
-enum DashboardRequest: Request {
+public enum MovieRequest: Request {
     case getPopularMovies
     case getTopRatedMovies
     case getDetailMovie(id: String)
     
-    var route: String {
+    public var route: String {
         let base: String = "https://api.themoviedb.org/3"
         switch self {
         case .getPopularMovies: return "\(base)/movie/popular"
@@ -22,7 +22,7 @@ enum DashboardRequest: Request {
         }
     }
     
-    var method: HttpMethod {
+    public var method: HttpMethod {
         switch self {
         case .getPopularMovies,
              .getTopRatedMovies,
@@ -31,7 +31,7 @@ enum DashboardRequest: Request {
         }
     }
     
-    var body: Data? {
+    public var body: Data? {
         switch self {
         case .getPopularMovies,
              .getTopRatedMovies,
@@ -40,7 +40,7 @@ enum DashboardRequest: Request {
         }
     }
     
-    var authorization: AuthorizationType {
+    public var authorization: AuthorizationType {
         switch self {
         case .getPopularMovies,
              .getTopRatedMovies,
@@ -49,7 +49,7 @@ enum DashboardRequest: Request {
         }
     }
     
-    var headers: [String : String]? {
+    public var headers: [String : String]? {
         switch self {
         case .getPopularMovies,
              .getTopRatedMovies,

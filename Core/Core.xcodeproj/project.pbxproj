@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1254962743FEE4008CE5CB /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1254952743FEE4008CE5CB /* CoordinatorType.swift */; };
 		2FC5CB04273DAC7100891756 /* AutoSizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5CB02273DAC7100891756 /* AutoSizingTableView.swift */; };
 		2FC5CB05273DAC7100891756 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC5CB03273DAC7100891756 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2F1254952743FEE4008CE5CB /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
 		2FC5CAF6273DAC2A00891756 /* libCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC5CB02273DAC7100891756 /* AutoSizingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoSizingTableView.swift; sourceTree = "<group>"; };
 		2FC5CB03273DAC7100891756 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
@@ -40,6 +42,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F1254942743FED2008CE5CB /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				2F1254952743FEE4008CE5CB /* CoordinatorType.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		2FC5CAED273DAC2A00891756 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 		2FC5CB00273DAC7100891756 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2F1254942743FED2008CE5CB /* Coordinator */,
 				2FC5CB01273DAC7100891756 /* Component */,
 				2FC5CB03273DAC7100891756 /* UIViewExtensions.swift */,
 			);
@@ -133,6 +144,7 @@
 			files = (
 				2FC5CB05273DAC7100891756 /* UIViewExtensions.swift in Sources */,
 				2FC5CB04273DAC7100891756 /* AutoSizingTableView.swift in Sources */,
+				2F1254962743FEE4008CE5CB /* CoordinatorType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

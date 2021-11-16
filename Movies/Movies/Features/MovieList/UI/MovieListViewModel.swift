@@ -1,5 +1,5 @@
 //
-//  DashboardViewModel.swift
+//  MovieListViewModel.swift
 //  Clean Architecture
 //
 //  Created by Wladmir Silva on 11/11/21.
@@ -8,13 +8,13 @@
 import RxSwift
 import Foundation
 
-protocol DashboardViewModelType {
+protocol MovieListViewModelType {
     func initState()
 }
 
-class DashboardViewModel: DashboardViewModelType {
+class MovieListViewModel: MovieListViewModelType {
     
-    weak var viewController: DashboardViewControllerType?
+    weak var viewController: MovieListViewControllerType?
     let getPopularUseCase: GetPopularMoviesUseCaseProtocol
     private let disposeBag = DisposeBag()
     

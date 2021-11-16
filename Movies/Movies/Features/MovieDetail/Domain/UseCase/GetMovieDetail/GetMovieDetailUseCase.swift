@@ -11,9 +11,9 @@ import RxSwift
 class GetMovieDetailUseCase {
  
     private let disposeBag = DisposeBag()
-    private let service: DashboardServiceProtocol
+    private let service: MovieServiceProtocol
     
-    public init(service: DashboardServiceProtocol) {
+    public init(service: MovieServiceProtocol) {
         self.service = service
     }
 }
@@ -22,7 +22,7 @@ extension GetMovieDetailUseCase: GetMovieDetailUseCaseProtocol {
  
     public func execute(_ movie: Movie) -> Observable<GetMovieDetailUseCaseResponse> {
         let observer = ReplaySubject<GetMovieDetailUseCaseResponse>.create(bufferSize: 1)
-        let request = DashboardRequest.getDetailMovie(id: movie.id.description)
+        let request = MovieRequest.getDetailMovie(id: movie.id.description)
         
         service.getDetailMovie(with: request) { result in
             switch result {

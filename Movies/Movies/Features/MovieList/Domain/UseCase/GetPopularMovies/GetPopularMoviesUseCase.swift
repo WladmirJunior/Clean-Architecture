@@ -8,12 +8,12 @@
 import Foundation
 import RxSwift
 
-class GetPopularMoviesUseCase {
+public class GetPopularMoviesUseCase {
  
     private let disposeBag = DisposeBag()
-    private let service: DashboardServiceProtocol
+    private let service: MovieServiceProtocol
     
-    public init(service: DashboardServiceProtocol) {
+    public init(service: MovieServiceProtocol) {
         self.service = service
     }
 }
@@ -22,7 +22,7 @@ extension GetPopularMoviesUseCase: GetPopularMoviesUseCaseProtocol {
  
     public func execute() -> Observable<GetPopularMoviesUseCaseResponse> {
         let observer = ReplaySubject<GetPopularMoviesUseCaseResponse>.create(bufferSize: 1)
-        let request = DashboardRequest.getPopularMovies
+        let request = MovieRequest.getPopularMovies
         
         service.getPopularMovies(with: request) { result in
             switch result {

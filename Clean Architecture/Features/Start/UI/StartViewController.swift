@@ -9,14 +9,14 @@ import UIKit
 import Core
 
 protocol StartViewControllerDelegate: AnyObject {
-    func goToMainScreen(_ startViewController: StartViewController)
+    func goNext(_ viewController: UIViewController)
 }
 
 class StartViewController: UIViewController {
 
     enum Constants {
-        static let buttonTitle = "Explore já"
-        static let subtitle = "Milhões de filmes e séries para descobrir. Esperimente por 7 dias."
+        static let buttonTitle = "Iniciar"
+        static let subtitle = "Tela de login ou onboarding..."
     }
 
     private lazy var contentView: UIView = {
@@ -31,14 +31,7 @@ class StartViewController: UIViewController {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
         imageView.image = .movies
-        return imageView
-    }()
-
-    private lazy var brandImage: UIImageView = {
-        let imageView = UIImageView(frame: .zero)
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = .logo
+        imageView.tintColor = .purple
         return imageView
     }()
 
@@ -82,7 +75,6 @@ class StartViewController: UIViewController {
     private func buildViewHierarchy() {
         view.addSubview(contentView)
         contentView.addSubview(movieImage)
-        contentView.addSubview(brandImage)
         contentView.addSubview(subtitleLabel)
         contentView.addSubview(centerButton)
     }
@@ -97,10 +89,7 @@ class StartViewController: UIViewController {
         movieImage.topTo(contentView.topAnchor)
             .centerXTo(contentView.centerXAnchor)
 
-        brandImage.centerXTo(contentView.centerXAnchor)
-            .topTo(movieImage.bottomAnchor, constant: Metrics.medium)
-
-        subtitleLabel.topTo(brandImage.bottomAnchor, constant: Metrics.small)
+        subtitleLabel.topTo(movieImage.bottomAnchor, constant: Metrics.small)
             .leadingTo(contentView.leadingAnchor, constant: Metrics.big)
             .trailingTo(contentView.trailingAnchor, constant: Metrics.big)
 
@@ -112,6 +101,6 @@ class StartViewController: UIViewController {
     // MARK: - ACTIONS
 
     @objc private func clickToExplore() {
-        delegate?.goToMainScreen(self)
+        delegate?.goNext(self)
     }
 }
